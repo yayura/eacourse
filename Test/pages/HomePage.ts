@@ -1,14 +1,26 @@
 //import the class
 import { browser, element, by, $, $$ } from 'protractor';
+import { IdentificationType, BasePage } from './BasePage';
 
-export class HomePage{
+const Locators = {
+    heading:{
+        type:IdentificationType[IdentificationType.Xpath],
+        value: "//course-thumb/div/h2[text()=' Selenium Framework development ']"
+    },
+    headings:{
+        type:IdentificationType[IdentificationType.Css],
+        value: ".well.hoverwell.thumbnail > h2"
+
+    }
+
+}
+export class HomePage extends BasePage{
     //Selenium framework development course
-    heading = element(by.xpath("//course-thumb/div/h2[test()='Selenium']"))
-                        .element(by.xpath("//span[constains(text(),'4th')]"))
+    heading = this.ElementLocator(Locators.heading).element(by.xpath("//span[constains(text(),'4th')]"));
      
      
     //All heading  
-    headings=$(".well.hoverwell.thumbnail > h2");
+    headings= this.ElementLocator(Locators.headings);
 
     //Open browser 
     OpenBrowser(url: string){
@@ -21,7 +33,7 @@ export class HomePage{
     });
     }
     ClickFirstHeading(){
-        this.heading.click();
+        this.headings.click();
 
     }
 }
