@@ -32,7 +32,8 @@ export class HomePage extends BasePage{
         console.log("The heading is :" + text)
     });
     }
-    async ClickFirstHeading(){
+    async ClickFirstHeading(heading: string){
+        console.log("Can I print the input value from StepDefenition, if yes, this is it "+ heading);
         await this.headings.click();
 
     }

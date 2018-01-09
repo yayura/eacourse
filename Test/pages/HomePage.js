@@ -95,11 +95,13 @@ var HomePage = /** @class */ (function (_super) {
             });
         });
     };
-    HomePage.prototype.ClickFirstHeading = function () {
+    HomePage.prototype.ClickFirstHeading = function (heading) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.headings.click()];
+                    case 0:
+                        console.log("Can I print the input value from StepDefenition, if yes, this is it " + heading);
+                        return [4 /*yield*/, this.headings.click()];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];

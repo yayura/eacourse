@@ -1,14 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -44,45 +34,47 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
-var BasePage_1 = require("./BasePage");
-///// 1111111  define locators 
-var Locators = {
-    Duration: {
-        type: BasePage_1.IdentificationType[BasePage_1.IdentificationType.Xpath],
-        value: "//ReleaseDate"
-    },
-    courseHeading: {
-        type: BasePage_1.IdentificationType[BasePage_1.IdentificationType.Xpath],
-        value: "//h2"
-    }
-};
-var CourseDetailPage = /** @class */ (function (_super) {
-    __extends(CourseDetailPage, _super);
-    function CourseDetailPage() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        ////////////222222222 define vars locators
-        _this.duration = _this.ElementLocator(Locators.Duration);
-        _this.courseHeading = _this.ElementLocator(Locators.courseHeading);
-        return _this;
-    }
-    ///////3333333333333333    
-    CourseDetailPage.prototype.ClickDuration = function () {
-        this.duration.click();
-    };
-    CourseDetailPage.prototype.GetCourseheading = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.courseHeading];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
+var cucumber_1 = require("cucumber");
+var protractor_1 = require("protractor");
+var config_1 = require("../steps/config");
+///handler
+cucumber_1.defineSupportCode(function (_a) {
+    var registerHandler = _a.registerHandler;
+    registerHandler('BeforeFeature', function () { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            console.log("Executing before feature!!");
+            return [2 /*return*/];
         });
-    };
-    return CourseDetailPage;
-}(BasePage_1.BasePage));
-exports.CourseDetailPage = CourseDetailPage;
-//# sourceMappingURL=CourseDetails.js.map
+    }); });
+    registerHandler('BeforeScenario', function () { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, protractor_1.browser.get(config_1.config.baseUrl)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    registerHandler('AfterScenario', function () { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            console.log("Scenario Executed!!");
+            return [2 /*return*/];
+        });
+    }); });
+    registerHandler('AfterFeature', function () { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    console.log("Executing after feature!!");
+                    return [4 /*yield*/, protractor_1.browser.close()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});
+//# sourceMappingURL=scenarioHook.js.map
