@@ -16,7 +16,6 @@
     }
   ],
   "dependencies": {
-    "@angular/cli": "^1.6.3",
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
     "@angular/core": "~2.2.0",
@@ -41,7 +40,7 @@
     "@types/node": "~6.0.46",
     "concurrently": "2.2.0",
     "jasmine": "^2.5.3",
-    "protractor": "^5.2.2",
+    "protractor": "^5.1.1",
     "typescript": "~2.0.3"
   },
   "repository": {}

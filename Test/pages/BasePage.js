@@ -1,29 +1,31 @@
 "use strict";
-var protractor_1 = require('protractor');
+Object.defineProperty(exports, "__esModule", { value: true });
+var protractor_1 = require("protractor");
+var IdentificationType;
 (function (IdentificationType) {
-    IdentificationType[IdentificationType["Id"] = 0] = "Id";
-    IdentificationType[IdentificationType["ClassName"] = 1] = "ClassName";
-    IdentificationType[IdentificationType["Css"] = 2] = "Css";
-    IdentificationType[IdentificationType["Xpath"] = 3] = "Xpath";
-    IdentificationType[IdentificationType["LinkText"] = 4] = "LinkText";
-    IdentificationType[IdentificationType["Js"] = 5] = "Js";
-})(exports.IdentificationType || (exports.IdentificationType = {}));
-var IdentificationType = exports.IdentificationType;
-var BasePage = (function () {
+    IdentificationType[IdentificationType["Xpath"] = 0] = "Xpath";
+    IdentificationType[IdentificationType["Css"] = 1] = "Css";
+    IdentificationType[IdentificationType["Id"] = 2] = "Id";
+    IdentificationType[IdentificationType["Js"] = 3] = "Js";
+    IdentificationType[IdentificationType["Name"] = 4] = "Name";
+    IdentificationType[IdentificationType["PartialLinkText"] = 5] = "PartialLinkText";
+    IdentificationType[IdentificationType["ClassName"] = 6] = "ClassName";
+})(IdentificationType = exports.IdentificationType || (exports.IdentificationType = {}));
+var BasePage = /** @class */ (function () {
     function BasePage() {
     }
     BasePage.prototype.ElementLocator = function (obj) {
         switch (obj.type) {
-            case IdentificationType[IdentificationType.Css]:
-                return protractor_1.element(protractor_1.by.css(obj.value));
             case IdentificationType[IdentificationType.Xpath]:
                 return protractor_1.element(protractor_1.by.xpath(obj.value));
             case IdentificationType[IdentificationType.ClassName]:
                 return protractor_1.element(protractor_1.by.js(obj.value));
-            case IdentificationType[IdentificationType.Js]:
-                return protractor_1.element(protractor_1.by.linkText(obj.value));
             case IdentificationType[IdentificationType.Id]:
                 return protractor_1.element(protractor_1.by.linkText(obj.Id));
+            case IdentificationType[IdentificationType.Js]:
+                return protractor_1.element(protractor_1.by.linkText(obj.value));
+            case IdentificationType[IdentificationType.Css]:
+                return protractor_1.element(protractor_1.by.css(obj.value));
             default:
                 break;
         }
