@@ -1,11 +1,11 @@
 import { defineSupportCode } from 'cucumber';
 import { browser } from 'protractor';
 import { config } from '../steps/config';
-
+import { JsonFormatter } from '../reporting/CucumberReportExtension';
 
 
 ///handler
-defineSupportCode(({ registerHandler }) => {
+defineSupportCode(({ registerHandler, registerListener }) => {
 
     registerHandler('BeforeFeature', async () => {
 
@@ -17,8 +17,8 @@ defineSupportCode(({ registerHandler }) => {
     });
     registerHandler('AfterScenario', async () => {
         console.log("Scenario Executed!!");
-      
-        
+
+
     });
 
 
@@ -27,6 +27,8 @@ defineSupportCode(({ registerHandler }) => {
         await browser.close();
 
     });
+
+    registerListener(JsonFormatter);
 
 
 });

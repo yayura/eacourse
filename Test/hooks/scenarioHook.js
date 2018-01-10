@@ -39,9 +39,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var cucumber_1 = require("cucumber");
 var protractor_1 = require("protractor");
 var config_1 = require("../steps/config");
+var CucumberReportExtension_1 = require("../reporting/CucumberReportExtension");
 ///handler
 cucumber_1.defineSupportCode(function (_a) {
-    var registerHandler = _a.registerHandler;
+    var registerHandler = _a.registerHandler, registerListener = _a.registerListener;
     registerHandler('BeforeFeature', function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             console.log("Executing before feature!!");
@@ -76,5 +77,6 @@ cucumber_1.defineSupportCode(function (_a) {
             }
         });
     }); });
+    registerListener(CucumberReportExtension_1.JsonFormatter);
 });
 //# sourceMappingURL=scenarioHook.js.map

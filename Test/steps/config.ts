@@ -1,12 +1,12 @@
-import {Config} from 'protractor';
+import { Config } from 'protractor';
 
 export let config: Config = {
 
-    
+
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: [ "../features/*.feature" ],
- 
- 
+    specs: ["../features/*.feature"],
+
+
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
@@ -14,8 +14,9 @@ export let config: Config = {
     cucumberOpts: {
         compiler: "ts:ts-node/register",
         strict: true,
-   format: ['pretty'],
+        format: ['pretty'],
         require: ['../steps/*.js', '../hooks/*.js'],
-        tags: '@smoke'
+       // tags: '@smoke or @regression'
+       // tags: '@smoke'
     }
 };

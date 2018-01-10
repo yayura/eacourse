@@ -11,7 +11,6 @@ exports.config = {
         strict: true,
         format: ['pretty'],
         require: ['../steps/*.js', '../hooks/*.js'],
-        tags: '@smoke'
     }
 };
 //# sourceMappingURL=config.js.map

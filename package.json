@@ -44,6 +44,7 @@
     "chai-as-promised": "^7.1.1",
     "concurrently": "2.2.0",
     "cucumber": "^2.3.1",
+    "cucumber-html-reporter": "^3.0.4",
     "jasmine": "^2.5.3",
     "pretty": "^2.0.0",
     "protractor": "^5.1.1",

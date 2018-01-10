@@ -1,0 +1,118 @@
+[
+  {
+    "keyword": "Feature",
+    "line": 1,
+    "name": "To work with home page",
+    "tags": [],
+    "uri": "C:\\WebstormProjects\\eacourse\\Test\\features\\Home.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Click course of application",
+        "tags": [
+          {
+            "line": 3,
+            "name": "@smoke"
+          }
+        ],
+        "id": "to-work-with-home-page;click-course-of-application",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I get all the heading",
+            "result": {
+              "status": "passed",
+              "duration": 88
+            },
+            "line": 6,
+            "match": {
+              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:17"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click the 'Selenium framework development' course",
+            "result": {
+              "status": "passed",
+              "duration": 132
+            },
+            "line": 7,
+            "match": {
+              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:21"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should see 'Selenium framework development' course in coursedetails page",
+            "result": {
+              "status": "passed",
+              "duration": 1
+            },
+            "line": 8,
+            "match": {
+              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:26"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Click course of application second time",
+        "tags": [
+          {
+            "line": 10,
+            "name": "@smoke"
+          }
+        ],
+        "id": "to-work-with-home-page;click-course-of-application-second-time",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I get all the heading",
+            "result": {
+              "status": "passed",
+              "duration": 138
+            },
+            "line": 13,
+            "match": {
+              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:17"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click the 'Selenium framework development' course",
+            "result": {
+              "status": "passed",
+              "duration": 132
+            },
+            "line": 14,
+            "match": {
+              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:21"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should see 'Selenium framework development' course in coursedetails page",
+            "result": {
+              "status": "passed",
+              "duration": 1
+            },
+            "line": 15,
+            "match": {
+              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:26"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "to-work-with-home-page"
+  }
+]
