@@ -80,5 +80,30 @@ cucumber_1.defineSupportCode(function (_a) {
             return [2 /*return*/];
         });
     }); });
+    Then(/^I should see all course information in coursedetails page$/, function (table) { return __awaiter(_this, void 0, void 0, function () {
+        var localTable;
+        return __generator(this, function (_a) {
+            localTable = [
+                ['Selenium', '2'],
+                ['Java', '4']
+            ];
+            table.rows().forEach(function (element) {
+                console.log(element);
+            });
+            chai_1.assert.deepEqual(localTable, table.rows(), "the data does not matches with the step def!");
+            console.log(table.rows() + "Assert OK!!!");
+            return [2 /*return*/];
+        });
+    }); });
+    When(/^I enter test in search from external data source$/, function () { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, homePage.EnterDataInSearchFromExcel()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); });
 });
 //# sourceMappingURL=HomeSteps.js.map

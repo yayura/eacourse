@@ -48,6 +48,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //import the class
 var protractor_1 = require("protractor");
 var BasePage_1 = require("./BasePage");
+var json = require("load-json-file");
+var ExecelUtil_1 = require("../utilities/ExecelUtil");
 var Locators = {
     heading: {
         type: BasePage_1.IdentificationType[BasePage_1.IdentificationType.Xpath],
@@ -56,6 +58,10 @@ var Locators = {
     headings: {
         type: BasePage_1.IdentificationType[BasePage_1.IdentificationType.Css],
         value: ".well.hoverwell.thumbnail > h2"
+    },
+    searchText: {
+        type: BasePage_1.IdentificationType[BasePage_1.IdentificationType.Css],
+        value: "[class='form-control']"
     }
 };
 var HomePage = /** @class */ (function (_super) {
@@ -66,6 +72,8 @@ var HomePage = /** @class */ (function (_super) {
         _this.heading = _this.ElementLocator(Locators.heading).element(protractor_1.by.xpath("//span[constains(text(),'4th')]"));
         //All heading  
         _this.headings = _this.ElementLocator(Locators.headings);
+        //Search Textbox
+        _this.searchText = _this.ElementLocator(Locators.searchText);
         return _this;
     }
     //Open browser 
@@ -106,6 +114,35 @@ var HomePage = /** @class */ (function (_super) {
                         _a.sent();
                         return [2 /*return*/];
                 }
+            });
+        });
+    };
+    HomePage.prototype.EnterDataInSearchFromJson = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, json("./data.json").then(function (x) {
+                            console.log(x);
+                            _this.searchText.sendKeys(x.SearchValue);
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    HomePage.prototype.EnterDataInSearchFromExcel = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var sheet;
+            return __generator(this, function (_a) {
+                sheet = ExecelUtil_1.ExcelUtil.ReadExcelSheet("./Data.xlsx");
+                //console.log((<any>sheet).SearchValue);
+                // this.searchText.sendKeys((<any>sheet).SearchValue);
+                console.log(sheet.SearchValue);
+                this.searchText.sendKeys(sheet.SearchValue);
+                return [2 /*return*/];
             });
         });
     };

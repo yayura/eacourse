@@ -11,12 +11,19 @@ export let config: Config = {
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     baseUrl: "http://localhost:8808/",
+
+    suites: {
+        "homepage": "../features/Home.feature",
+        "coursedetails": "../features/CourseDetails.feature"
+
+    },
+
     cucumberOpts: {
         compiler: "ts:ts-node/register",
         strict: true,
         format: ['pretty'],
         require: ['../steps/*.js', '../hooks/*.js'],
        // tags: '@smoke or @regression'
-       // tags: '@smoke'
+        tags: '@test'
     }
 };

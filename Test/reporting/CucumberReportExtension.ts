@@ -54,3 +54,4 @@ export class CucumberReportExtension {
 }
 
 export let JsonFormatter = new CucumberReportExtension().JsonFormatter;
+

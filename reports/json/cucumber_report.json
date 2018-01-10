@@ -4,7 +4,7 @@
     "line": 1,
     "name": "To work with home page",
     "tags": [],
-    "uri": "C:\\WebstormProjects\\eacourse\\Test\\features\\Home.feature",
+    "uri": "c:\\WebstormProjects\\eacourse\\Test\\features\\Home.feature",
     "elements": [
       {
         "keyword": "Scenario",
@@ -24,11 +24,11 @@
             "name": "I navigate to application",
             "result": {
               "status": "passed",
-              "duration": 1448
+              "duration": 1413
             },
             "line": 24,
             "match": {
-              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:14"
+              "location": "c:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:14"
             }
           },
           {
@@ -36,12 +36,13 @@
             "keyword": "And ",
             "name": "I enter test in search from external data source",
             "result": {
-              "status": "passed",
-              "duration": 83
+              "status": "failed",
+              "duration": 2,
+              "error_message": "Error: ENOENT: no such file or directory, open 'c:\\WebstormProjects\\eacourse\\data.json'"
             },
             "line": 25,
             "match": {
-              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:45"
+              "location": "c:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:45"
             }
           },
           {
@@ -49,12 +50,11 @@
             "keyword": "And ",
             "name": "I get all the heading",
             "result": {
-              "status": "passed",
-              "duration": 187
+              "status": "skipped"
             },
             "line": 26,
             "match": {
-              "location": "C:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:18"
+              "location": "c:\\WebstormProjects\\eacourse\\Test\\steps\\HomeSteps.ts:18"
             }
           }
         ]
