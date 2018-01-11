@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import { mkdirp } from 'mkdirp'
+import { mkdirnp } from 'mkdirp'
 import * as report from 'cucumber-html-reporter'
 
 

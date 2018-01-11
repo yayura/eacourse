@@ -77,6 +77,20 @@ cucumber_1.defineSupportCode(function (_a) {
             }
         });
     }); });
+    registerHandler("StepResult", function (StepResult) { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            if (StepResult.isFailed()) {
+                return [2 /*return*/, protractor_1.browser.takeScreenshot().then(function (screenShot) {
+                        var decodedImage = new Buffer(screenShot, 'base64');
+                        StepResult.attachments.push({
+                            data: decodedImage.toString('base64'),
+                            mimeType: 'image/png'
+                        });
+                    })];
+            }
+            return [2 /*return*/];
+        });
+    }); });
     registerListener(CucumberReportExtension_1.JsonFormatter);
 });
 //# sourceMappingURL=scenarioHook.js.map

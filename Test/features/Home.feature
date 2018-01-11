@@ -1,6 +1,6 @@
 Feature: To work with home page
 
-@smoke
+@test
 Scenario: Click course of application
 
    And I get all the heading

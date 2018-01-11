@@ -28,6 +28,19 @@ defineSupportCode(({ registerHandler, registerListener }) => {
 
     });
 
+    registerHandler("StepResult", async (StepResult) => {
+        if (StepResult.isFailed()) {
+            return browser.takeScreenshot().then(function (screenShot) {
+                var decodedImage = new Buffer(screenShot, 'base64');
+                StepResult.attachments.push({
+                    data: decodedImage.toString('base64'),
+                    mimeType: 'image/png'
+
+                })
+            });
+        }
+    });
+
     registerListener(JsonFormatter);
 
 
